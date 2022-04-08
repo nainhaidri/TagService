@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql_tag:
+    image: mysql:5.7.22
+    container_name: mysql_tag
+    restart: unless-stopped
+    tty: true
+    ports: 
+      - "3306:3306"
+    volumes:
+      - "C:/users/hp/Desktop/Zunnurain/nodejs/TagService/mysql:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: VideoStore
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
